@@ -1,0 +1,14 @@
+<link rel="import" href="packages/polymer/polymer.html">
+<polymer-element name="r-player">
+  <template>
+    <style>
+      :host {
+        display: block;
+       }
+    </style>
+    <button on-click="{{play}}">Play</button>
+    <button on-click="{{pause}}">Pause</button>
+  </template>
+  <script type="application/dart" src="r-player.dart"></script>
+</polymer-element>
+
