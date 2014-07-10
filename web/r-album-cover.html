@@ -1,7 +1,6 @@
 <link rel="import" href="packages/polymer/polymer.html">
-<polymer-element name="r-album-cover">
+<polymer-element name="r-album-cover" attributes="src" noscript>
   <template>
-    <img src="{{ albumUrl }}">
+    <img src="{{ src }}">
   </template>
-  <script type="application/dart" src="r-album-cover.dart"></script>
 </polymer-element>

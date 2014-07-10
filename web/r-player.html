@@ -1,4 +1,6 @@
 <link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_button.html">
+
 <polymer-element name="r-player">
   <template>
     <style>
@@ -6,8 +8,8 @@
         display: block;
        }
     </style>
-    <button on-click="{{play}}">Play</button>
-    <button on-click="{{pause}}">Pause</button>
+    <paper-button label="Play" on-tap="{{play}}"></paper-button>
+    <paper-button label="Pause" on-tap="{{pause}}"></paper-button>
   </template>
   <script type="application/dart" src="r-player.dart"></script>
 </polymer-element>

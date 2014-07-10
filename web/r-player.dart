@@ -3,8 +3,6 @@ import 'dart:js';
 
 @CustomTag('r-player')
 class RPlayer extends PolymerElement {
-//  @published int count = 0;
-  
   RPlayer.created() : super.created() {
   }
 

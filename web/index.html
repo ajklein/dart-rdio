@@ -4,23 +4,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample app</title>
+    <title>Dart Player</title>
     <script src="https://www.rdio.com/api/api.js?helper=helper.html&amp;client_id=UHowmQ4aYC5rq2vHsHYzWw"></script>
     <script src="packages/web_components/platform.js"></script>
     <script src="packages/web_components/dart_support.js"></script>
 
-    <link rel="import" href="r-player.html">
-    <link rel="import" href="r-album-cover.html">
+    <link rel="import" href="r-app.html">
     
     <script type="application/dart">export 'package:polymer/init.dart';</script>
     <script src="packages/browser/dart.js"></script>
-    
-    <link rel="stylesheet" href="rdio.css">
   </head>
   <body>
-    <h1>Rdio</h1>
-    
-    <r-player></r-player>
-    <r-album-cover></r-album-cover>
+    <r-app></r-app>
   </body>
 </html>
