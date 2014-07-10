@@ -6,7 +6,7 @@ class RModel extends PolymerElement {
   @published String albumUrl;
   @published String albumTitle;
 
-  @published Iterable trackNames;
+  @published List trackNames;
   
   RModel.created() : super.created() {
     context['R'].callMethod('ready', [(ready) {
@@ -14,7 +14,7 @@ class RModel extends PolymerElement {
         if (source.callMethod('get', ['type']) != 'a')
           return;
         JsArray tracks = source.callMethod('get', ['tracks'])['models'];
-        trackNames = tracks.map((track) => track.callMethod('get', ['name'])).toList();
+        trackNames = toObservable(tracks.map((track) => track.callMethod('get', ['name'])).toList());
       }]);
       context['R']['player'].callMethod('on', ['change:playingTrack', (track) {
         if (track == null)

@@ -1,11 +1,13 @@
 <link rel="import" href="packages/polymer/polymer.html">
 
+<link rel="import" href="packages/core_elements/core_header_panel.html">
 <link rel="import" href="packages/core_elements/core_toolbar.html">
 <link rel="import" href="packages/core_elements/core_icon_button.html">
 
 <link rel="import" href="r-model.html">
 <link rel="import" href="r-player.html">
 <link rel="import" href="r-album-cover.html">
+<link rel="import" href="r-tracklist.html">
 
 <polymer-element name="r-app">
   <template>
@@ -16,19 +18,23 @@
       
     </style>
     <r-model albumUrl="{{ albumUrl }}" albumTitle="{{ albumTitle }}" trackNames="{{ trackNames }}"></r-model>
+ 
+      <core-toolbar theme="core-light-theme">
+        <!--<core-icon-button icon="menu"></core-icon-button>-->
+        <span flex>{{ albumTitle }}</span>
+      </core-toolbar>
     
-    <core-toolbar theme="core-light-theme">
-      <core-icon-button icon="menu"></core-icon-button>
-      <span flex>{{ albumTitle }}</span>
-    </core-toolbar>
-    
-    <r-player></r-player>
-    <template if="{{ albumUrl }}">
+      <r-player></r-player>
       <r-album-cover src="{{ albumUrl }}"></r-album-cover>
-    </template>
-    <template repeat="{{ track in trackNames }}">
-      <div>{{track}}</div>
-    </template>    
+      
+      <!-- FIXME: trackNames is getting stringified instead of bound into r-tracklist -->
+      <!--<r-tracklist tracks="{{ trackNames }}"></r-tracklist>-->
+      <ol>
+        <template repeat="{{ track in trackNames }}">
+          <li>{{track}}</li>
+        </template>
+      </ol>
+
   </template>
   <script type="application/dart" src="r-app.dart"></script>
 </polymer-element>

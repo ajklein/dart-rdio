@@ -8,8 +8,10 @@
         display: block;
        }
     </style>
-    <paper-button label="Play" on-tap="{{play}}"></paper-button>
-    <paper-button label="Pause" on-tap="{{pause}}"></paper-button>
+    <paper-button label="&#9658;" raisedButton on-tap="{{play}}"></paper-button>
+    <paper-button label="&#9553;" raisedButton on-tap="{{pause}}"></paper-button>
+    <paper-button label="&lt;&lt;" raisedButton on-tap="{{previous}}"></paper-button>
+    <paper-button label="&gt;&gt;" raisedButton on-tap="{{next}}"></paper-button>
   </template>
   <script type="application/dart" src="r-player.dart"></script>
 </polymer-element>

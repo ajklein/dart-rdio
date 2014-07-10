@@ -1,6 +1,10 @@
 <link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_shadow.html">
 <polymer-element name="r-album-cover" attributes="src" noscript>
   <template>
-    <img src="{{ src }}">
+    <div style="display: inline-block;">
+      <paper-shadow z="2"></paper-shadow>
+      <img src="{{ src }}">
+    </div>
   </template>
 </polymer-element>

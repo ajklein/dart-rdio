@@ -7,13 +7,19 @@ class RPlayer extends PolymerElement {
   }
 
   void play() {
-    var player = context['R']['player'];
-    player.callMethod('play', [new JsObject.jsify({'source': 'a171827'})]);
+    context['R']['player'].callMethod('play', [new JsObject.jsify({'source': 'a171827'})]);
   }
   
   void pause() {
-    var player = context['R']['player'];
-    player.callMethod('togglePause');
+    context['R']['player'].callMethod('togglePause');
+  }
+  
+  void next() {
+    context['R']['player'].callMethod('next');    
+  }
+  
+  void previous() {
+    context['R']['player'].callMethod('previous');
   }
 }
 

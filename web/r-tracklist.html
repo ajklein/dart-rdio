@@ -1,0 +1,14 @@
+<link rel="import" href="packages/polymer/polymer.html">
+
+<polymer-element name="r-tracklist" attributes="tracks">
+  <template>
+    <style>
+      :host { display: block }
+    </style>
+    <ol>
+      <template repeat="{{ track in tracks }}">
+        <li>{{track}}</li>
+      </template>
+    </ol>
+  </template>
+</polymer-element>    
