@@ -19,6 +19,8 @@ class RTracklist extends PolymerElement {
   
   void playTrack(Event e, var detail, Element target) {
     String trackId = target.attributes['data-key'];
+    // FIXME: Make this play nice with the rest of the UI; currently, we
+    // drop the rest of the album on the floor.
     context['R']['player'].callMethod('play', [new JsObject.jsify({'source': trackId})]);
   }
 }

@@ -18,6 +18,7 @@
           <span>{{ albumTitle }}</span>
         </core-toolbar>
         <template repeat="{{ track in tracks }}">
+          <!-- FIXME: Why can't I access track from my dart code? This data attribute seems weird. -->
           <paper-item label="{{track | getName}}" data-key="{{track | getKey}}" on-tap="{{playTrack}}"></paper-item>
         </template>
       </core-header-panel>
