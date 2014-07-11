@@ -3,7 +3,10 @@
 <polymer-element name="r-tracklist">
   <template>
     <style>
-      :host { display: block }
+      :host {
+        display: block;
+        background-color: lightgrey;
+      }
     </style>
     <ol>
       <template repeat="{{ track in tracks }}">

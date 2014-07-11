@@ -1,12 +1,13 @@
 <link rel="import" href="packages/polymer/polymer.html">
 
+<link rel="import" href="packages/core_elements/core_drawer_panel.html">
 <link rel="import" href="packages/core_elements/core_header_panel.html">
 <link rel="import" href="packages/core_elements/core_toolbar.html">
 <link rel="import" href="packages/core_elements/core_icon_button.html">
+<link rel="import" href="packages/paper_elements/paper_shadow.html">
 
 <link rel="import" href="r-model.html">
 <link rel="import" href="r-player.html">
-<link rel="import" href="r-album-cover.html">
 <link rel="import" href="r-tracklist.html">
 
 <polymer-element name="r-app">
@@ -14,20 +15,31 @@
     <style>
       :host {
         display: block;
+        height: 100%;
       }
       
+      core-header-panel {
+        height: 100%;
+      }
     </style>
-    <r-model albumUrl="{{ albumUrl }}" albumTitle="{{ albumTitle }}" trackNames="{{ trackNames }}"></r-model>
- 
-      <core-toolbar theme="core-light-theme">
-        <!--<core-icon-button icon="menu"></core-icon-button>-->
-        <span flex>{{ albumTitle }}</span>
+    <r-model albumUrl="{{ albumUrl }}"
+             albumTitle="{{ albumTitle }}"
+             trackNames="{{ trackNames }}"
+             currentTrack="{{ currentTrack }}"></r-model>
+    <core-drawer-panel id="drawer-panel" narrow="{{narrowLayout}}">
+      <core-header-panel flex main>
+      <core-toolbar>
+        <core-icon-button icon="menu" on-tap="{{openTracklist}}" hidden?="{{!narrowLayout}}"></core-icon-button>
+        <span flex>{{ currentTrack }}</span>
       </core-toolbar>
-    
-      <r-player></r-player>
-      <r-album-cover src="{{ albumUrl }}"></r-album-cover>
-      <r-tracklist tracks="{{ trackNames }}"></r-tracklist>
-
+      <div>
+        <paper-shadow></paper-shadow>
+        <img src="{{ albumUrl }}" width=400 height=400>
+        <r-player></r-player>
+      </div>
+      </core-header-panel>
+      <r-tracklist tracks="{{ trackNames }}" drawer></r-tracklist> 
+    </core-drawer-panel>
 
   </template>
   <script type="application/dart" src="r-app.dart"></script>

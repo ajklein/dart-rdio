@@ -7,6 +7,7 @@ class RModel extends PolymerElement {
   @published String albumTitle;
 
   @published List<String> trackNames;
+  @published String currentTrack;
   
   RModel.created() : super.created() {
     context['R'].callMethod('ready', [(ready) {
@@ -21,6 +22,7 @@ class RModel extends PolymerElement {
           return;
         albumUrl = track.callMethod('get', ['icon']);
         albumTitle = track.callMethod('get', ['album']);
+        currentTrack = track.callMethod('get', ['name']);
       }]);
     }]);
   }

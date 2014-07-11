@@ -8,10 +8,11 @@
         display: block;
        }
     </style>
-    <paper-button label="&#9658;" raisedButton on-tap="{{play}}"></paper-button>
-    <paper-button label="&#9553;" raisedButton on-tap="{{pause}}"></paper-button>
-    <paper-button label="&lt;&lt;" raisedButton on-tap="{{previous}}"></paper-button>
-    <paper-button label="&gt;&gt;" raisedButton on-tap="{{next}}"></paper-button>
+    <div horizontal layout around-justified>
+      <paper-button label="&lt;&lt;" on-tap="{{previous}}"></paper-button>
+      <paper-button label="{{ playing ? '&#9553;' : '&#9658;' }}" on-tap="{{togglePause}}"></paper-button>
+      <paper-button label="&gt;&gt;" on-tap="{{next}}"></paper-button>
+    </div>
   </template>
   <script type="application/dart" src="r-player.dart"></script>
 </polymer-element>
