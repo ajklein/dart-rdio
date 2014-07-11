@@ -13,14 +13,22 @@ class RTracklist extends PolymerElement {
     return track.callMethod('get', ['name']);
   }
   
-  String getKey(JsObject track) {
-    return track.callMethod('get', ['key']);
+  String getIndex(JsObject track) {
+    return track.callMethod('get', ['trackNum']);
   }
   
   void playTrack(Event e, var detail, Element target) {
-    String trackId = target.attributes['data-key'];
-    // FIXME: Make this play nice with the rest of the UI; currently, we
-    // drop the rest of the album on the floor.
-    context['R']['player'].callMethod('play', [new JsObject.jsify({'source': trackId})]);
+    int trackIndex = int.parse(target.attributes['data-index']);
+    int currentIndex = context['R']['player'].callMethod('playingTrack').callMethod('get', ['trackNum']);
+    int diff = trackIndex - currentIndex;
+    if (diff < 0) {
+      for (var i = 0; i < (-diff); ++i) {
+        context['R']['player'].callMethod('previous');
+      }
+    } else if (diff > 0) {
+      for (var i = 0; i < diff; ++i) {
+        context['R']['player'].callMethod('next');
+      }
+    }
   }
 }
