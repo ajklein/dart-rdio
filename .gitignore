@@ -1,6 +1,6 @@
 .buildlog
 build/
-packages/
+packages
 *.dart.js
 *.dart.precompiled.js
 *.js_
