@@ -24,7 +24,7 @@
     </style>
     <r-model albumUrl="{{ albumUrl }}"
              albumTitle="{{ albumTitle }}"
-             trackNames="{{ trackNames }}"
+             tracks="{{ tracks }}"
              currentTrack="{{ currentTrack }}"></r-model>
     <core-drawer-panel id="drawer-panel">
       <core-header-panel flex main>
@@ -39,7 +39,7 @@
         <r-player></r-player>
       </div>
       </core-header-panel>
-      <r-tracklist tracks="{{ trackNames }}" drawer></r-tracklist> 
+      <r-tracklist albumTitle="{{ albumTitle }}" tracks="{{ tracks }}" drawer></r-tracklist> 
     </core-drawer-panel>
 
   </template>

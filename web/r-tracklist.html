@@ -1,18 +1,26 @@
 <link rel="import" href="packages/polymer/polymer.html">
 
-<polymer-element name="r-tracklist">
+<link rel="import" href="packages/core_elements/core_header_panel.html">
+<link rel="import" href="packages/core_elements/core_toolbar.html">
+
+<link rel="import" href="packages/paper_elements/paper_item.html">
+
+<polymer-element name="r-tracklist" vertical layout>
   <template>
     <style>
       :host {
         display: block;
-        background-color: lightgrey;
+        background-color: white;
       }
     </style>
-    <ol>
-      <template repeat="{{ track in tracks }}">
-        <li>{{track}}</li>
-      </template>
-    </ol>
+      <core-header-panel flex>
+        <core-toolbar>
+          <span>{{ albumTitle }}</span>
+        </core-toolbar>
+        <template repeat="{{ track in tracks }}">
+          <paper-item label="{{track | getName}}"></paper-item>
+        </template>
+      </core-header-panel>
   </template>
   <script type="application/dart" src="r-tracklist.dart"></script>
 </polymer-element>    
