@@ -1,2 +1,10 @@
 .buildlog
+build/
 packages/
+*.dart.js
+*.dart.precompiled.js
+*.js_
+*.js.deps
+*.js.map
+.DS_Store
+pubspec.lock
