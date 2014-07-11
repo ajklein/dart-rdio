@@ -11,6 +11,6 @@ class RApp extends PolymerElement {
   
   void openTracklist() {
     // FIXME: Dart's drawer-panel doesn't support toggleDrawer() method
-    this.$['drawer-panel'].selected = 'drawer';
+    $['drawer-panel'].selected = 'drawer';
   }
 }

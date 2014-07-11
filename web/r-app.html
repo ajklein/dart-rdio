@@ -26,10 +26,11 @@
              albumTitle="{{ albumTitle }}"
              trackNames="{{ trackNames }}"
              currentTrack="{{ currentTrack }}"></r-model>
-    <core-drawer-panel id="drawer-panel" narrow="{{narrowLayout}}">
+    <core-drawer-panel id="drawer-panel">
       <core-header-panel flex main>
       <core-toolbar>
-        <core-icon-button icon="menu" on-tap="{{openTracklist}}" hidden?="{{!narrowLayout}}"></core-icon-button>
+        <!-- FIXME: Hide this button when not in narrow mode -->
+        <core-icon-button icon="menu" on-tap="{{openTracklist}}"></core-icon-button>
         <span flex>{{ currentTrack }}</span>
       </core-toolbar>
       <div>
