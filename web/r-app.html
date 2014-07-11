@@ -26,14 +26,8 @@
     
       <r-player></r-player>
       <r-album-cover src="{{ albumUrl }}"></r-album-cover>
-      
-      <!-- FIXME: trackNames is getting stringified instead of bound into r-tracklist -->
-      <!--<r-tracklist tracks="{{ trackNames }}"></r-tracklist>-->
-      <ol>
-        <template repeat="{{ track in trackNames }}">
-          <li>{{track}}</li>
-        </template>
-      </ol>
+      <r-tracklist tracks="{{ trackNames }}"></r-tracklist>
+
 
   </template>
   <script type="application/dart" src="r-app.dart"></script>

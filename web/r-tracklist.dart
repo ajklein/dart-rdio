@@ -4,6 +4,5 @@ import 'package:polymer/polymer.dart';
 class RTracklist extends PolymerElement {
   @published List<String> tracks;
   
-  RTracklist.created() : super.created() {
-  }
+  RTracklist.created() : super.created();
 }

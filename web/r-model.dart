@@ -6,7 +6,7 @@ class RModel extends PolymerElement {
   @published String albumUrl;
   @published String albumTitle;
 
-  @published List trackNames;
+  @published List<String> trackNames;
   
   RModel.created() : super.created() {
     context['R'].callMethod('ready', [(ready) {
