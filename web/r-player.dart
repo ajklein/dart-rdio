@@ -7,7 +7,9 @@ class RPlayer extends PolymerElement {
   
   RPlayer.created() : super.created() {
     context['R'].callMethod('ready', [(ready) {
-      context['R']['player'].callMethod('play', [new JsObject.jsify({'source': 'a171827'})]);
+      // The Bends
+      // context['R']['player'].callMethod('play', [new JsObject.jsify({'source': 'a171827'})]);
+      context['R']['player'].callMethod('play', [new JsObject.jsify({'source': 'a196556'})]);
       playing = true;
     }]);
   }
